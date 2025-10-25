@@ -1,0 +1,45 @@
+----------------------------------------------
+Kein Handicap Healthcare Analytics - Power BI
+DAX Measures Used in Dashboard
+----------------------------------------------
+
+-- 1. Total Patient Visits
+Total_Patient_Visits =
+SUM('Healthcare_KPI'[Patient_Visits])
+
+-- 2. Average Care Hours per Patient
+Avg_Care_Hours =
+AVERAGE('Healthcare_KPI'[Avg_Care_Hours])
+
+-- 3. Staff Utilization Rate
+Avg_Staff_Utilization_% =
+AVERAGE('Healthcare_KPI'[Staff_Utilization_%])
+
+-- 4. Patient Satisfaction Score
+Avg_Satisfaction_Score =
+ROUND(AVERAGE('Healthcare_KPI'[Satisfaction_Score]), 1)
+
+-- 5. Monthly Trend in Patient Visits
+Monthly_Visit_Change_% =
+VAR PrevMonth =
+    CALCULATE(SUM('Healthcare_KPI'[Patient_Visits]), DATEADD('Healthcare_KPI'[Date], -4, WEEK))
+VAR CurrMonth =
+    SUM('Healthcare_KPI'[Patient_Visits])
+RETURN
+    DIVIDE(CurrMonth - PrevMonth, PrevMonth, 0)
+
+-- 6. Department-wise Care Efficiency
+Care_Efficiency_Index =
+DIVIDE(
+    SUM('Healthcare_KPI'[Patient_Visits]),
+    SUM('Healthcare_KPI'[Avg_Care_Hours]),
+    0
+)
+
+-- 7. Satisfaction Index (Weighted)
+Satisfaction_Index =
+DIVIDE(
+    SUMX('Healthcare_KPI', 'Healthcare_KPI'[Satisfaction_Score] * 'Healthcare_KPI'[Patient_Visits]),
+    SUM('Healthcare_KPI'[Patient_Visits]),
+    0
+)
