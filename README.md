@@ -43,11 +43,6 @@ Data collected and anonymized from internal reporting systems of Kein Handicap B
 
 ---
 
-## 📷 Dashboard Preview
-![Healthcare Dashboard](visuals/kein_handicap_dashboard.jpg)
-
----
-
 ## 📈 Business Impact
 This dashboard helped the organization’s management:
 - Gain a real-time view of staff productivity and patient satisfaction.  
