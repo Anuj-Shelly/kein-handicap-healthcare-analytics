@@ -49,6 +49,10 @@ This dashboard helped the organization’s management:
 - Identify underperforming service areas and optimize resources.  
 - Enhance overall decision-making and operational transparency.  
 
+## 🖼️ Power BI Dashboard Preview  
+![Healthcare Analytics Dashboard](https://github.com/Anuj-Shelly/kein-handicap-healthcare-analytics/blob/main/Healthcare%20analytics%20dashboard.png)  
+*Figure: Kein Handicap Healthcare Operations Dashboard – built in Power BI*
+
 ---
 
 ## 👤 Author
